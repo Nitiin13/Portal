@@ -5,7 +5,7 @@ body
 {
     margin: 0;
     top:0;
-    background-color:#ffffff;
+    background-color:#cdc5ff;
 
 }
 .container{
@@ -20,7 +20,7 @@ body
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    background-color:#293556;
+    background-color:#211d7f;
     height:40px;
     align-items: center;
 }
@@ -45,7 +45,7 @@ body
     margin-top:10px;
     border: 1px solid black;
     box-shadow:5px 4px rgb(15, 15, 15);
-    
+    background-color: #ffffff;
 }
 .main-div input[type="text"]{
     height: 30px;
