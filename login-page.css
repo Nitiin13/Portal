@@ -35,19 +35,20 @@ body{
 
 
 .login-box{
+   
     grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-end: 5;
     grid-row: 3/5;
     display:flex;
     justify-content: flex-start;
     flex-direction: column;
     width:65%;
-    height: 350px;
+    height: 335px;
     border:1px solid rgb(94, 94, 94);
-    border-radius:8px;
+    border-radius:0px;
     padding:10px 12px;
     background-color: #ffffff;
-    box-shadow: 3px 2px rgb(46, 46, 46); 
+    box-shadow: 3px 2px rgb(34, 34, 34); 
     /* background-color: hsla(201, 100%, 50%, 0.1); */
    
 }
@@ -73,16 +74,23 @@ body{
     border-radius: 0px none;
     background-color:#211d7f;
     color:white;
+    margin-left: 35%;
+   
     
 }
 .login-box #rg-button{
     width:100%;
     padding:10px 12px;
     border-radius: 5px;
-    background-color:#6e72bf;
+    background-color:#5cdb5c;
     color:White;
     margin-top:0px;    
 }
 .login-box h4{
    align-self: center;
+   
+}
+.login-box #lgn-button:hover{
+        cursor: pointer;
+        background-color:#8c8cf0;
 }

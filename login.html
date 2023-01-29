@@ -11,22 +11,51 @@
 <body>
  <div class="container">
     <div class="navbar"> 
-       <a href="#">AlmaPortal</a>
+       <a href="#">TicketPortal</a>
     </div>
     <div class="login-box">
         <form >
         <label for="#email">Email</label>
-        <input type="email" id="email" placeholder="Enter your Email Address"/><br>
+        <input type="email" id="email" placeholder="Enter your Email Address" /><br>
         <label for="#pass">Password</label>
         <input type="password" id="pass" placeholder="Enter your Password"/>
-        <button id="lgn-button">Login</button>
+        <button id="lgn-button" onclick="myvalidation()">Login</button>
         <hr>
-        </form>
-        <h4>Create a New Account</h4>
+    </form>
+        
+        <h4>Create a New Account?</h4>
         <Button id="rg-button">Register</Button>
         
     </div>
     
  </div>
+ <script>
+    
+    function myvalidation(){
+        var email=document.getElementById("email").value;
+    var pass=document.getElementById("pass").value;
+        const pattern=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(email="")
+    {
+        alert('email is required');
+    }
+    else if(!pattern.test(email)){
+        
+         alert("Inavlid email format!");
+         
+    }
+    var passw=  /^[A-Za-z]\w{7,14}$/;
+    if(pass=""){
+        alert("Password required!")
+    }
+    else if(!pass.match(passw)) 
+    { 
+
+        alert('Password must contain ')
+    }
+   
+}
+</script>
 </body>
+
 </html>
