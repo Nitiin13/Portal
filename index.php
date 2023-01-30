@@ -1,9 +1,6 @@
-<?php include 'ticket_add.php';   
-    include('navbar.php');
-    
+<?php
    
-    // session_start();
-    
+    session_start();
     if(!isset($_SESSION['isLoggedIn']) || $_SESSION['isLoggedIn']!=true)
     {
         header('Location:login.php');
@@ -14,23 +11,26 @@
 <head>
     <title>Portal</title>
     <link rel="stylesheet" href="page1.css">
+    <link rel="stylesheet" href="nav.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 </head>
 <body>
+<?php include('navbar.php');?>
     <div class="container">
+      
         <div class="main-div">
             <h1>Add a Ticket</h1>
             <!--  -->
-            <form name="ticket-form" onsubmit="return myfunction()" autocomplete="off"method="post" action="ticket_add.php">
-            <span id='error_title' ><?php if(isset($title_err)){ echo $title_err;} ?></span>            
+            <form id="ticketform" onsubmit="return myfunction()" autocomplete="off"method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                     
             <label for="#title">Title</label>
                         <input type="text" id="title" placeholder="Title "name="ticket-title"  /><br/>
-                        <span id='error_desc' ><?php if(isset($title_desc)){ echo $desc_err; } ?></span>
+                        
                         <label for="#desc">Description</label>
-                        <textarea id="desc"placeholder="Description"name="ticket-desc"rows="1"cols="30"maxlength="255" form="ticket-form" ></textarea>
+                        <textarea id="ticket-detail"   placeholder="Description" name="ticket-detail" form="ticketform"  rows="1"cols="30"maxlength="255"></textarea>
                         <label for="#myfile">Attachment</label>
-                        <input type="file" id="myfile" name=" attachment">
+                        <input type="file" id="myfile" name="attachment">
                         <button id="btn" name="form-submit">Submit</button>
             
            </form>
@@ -91,6 +91,39 @@
     }
     
     </script> 
+<?php
+// include('authenticate.php');    
+// session_start();
 
+if(isset($_POST['form-submit']))   
+ {
+                if(isset($_POST['title']) AND isset($_POST['ticket-detail']) )
+                {
+                    $title_err="both the fields are requried";
+                }
+                else{
+                    $title=input_validation($_POST['ticket-title']);
+                    $desc=input_validation($_POST['ticket-detail']);
+                    $attach=$_POST['attachment'];
+                    $id=$_SESSION['id'];
+                    
+                    $q="insert into tickets(title,description,u_id)values('$title','$desc',$id)";
+                    if(mysqli_query($conn,$q)){
+                        echo '<script type ="text/JavaScript">';  
+                        echo 'alert("inserted")';  
+                        echo '</script>'; 
+                     }
+                
+             
+            // }
+            }
+        }
+function input_validation($data){
+    
+    $data=trim($data);
+    $data=stripslashes($data);
+    $data=htmlspecialchars($data);
+    return $data;
+}?>
 </body>
 </html>

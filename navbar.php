@@ -1,22 +1,15 @@
 <?php
-require('authenticate.php');
-session_start();
+
+include('authenticate.php');
+
 $loggedin=false;
 // error_reporting(0);
 if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']==true)
 {
-    echo $_SESSION['id'];
+    
    $loggedin=true;
 }
 ?>
-<!DOCTYPE html>
-  
-<head>
-    <title>Navbar</title>
-    <link rel="stylesheet" href="nav.css">
-</head>
-
-<body>
 <div class="navbar"> 
        <a href="#">TicketPortal</a>
       <?php if($loggedin)
@@ -32,5 +25,3 @@ if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']==true)
     }
     ?>
     </div>
-</body>
-</html>
