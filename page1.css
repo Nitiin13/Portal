@@ -13,26 +13,8 @@ body
     grid-template-columns: auto auto auto auto;
     gap:10px;
 }
-.navbar{
-    grid-column: 1/4;
-    margin:0;
-    top:0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    background-color:#211d7f;
-    height:40px;
-    align-items: center;
-}
-.navbar a{
-    padding: 5px 10px 5px 10px;
-    color:#ffffff;
-    text-decoration: none;
-}
-.navbar a:hover{
-    background-color: #ffffff;
-    color:black;
-}
+
+
 
 .main-div{
     grid-column: 3/4;

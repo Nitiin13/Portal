@@ -1,4 +1,15 @@
-<?php include 'demo.php'?>
+<?php include 'ticket_add.php';   
+    include('navbar.php');
+    
+   
+    // session_start();
+    
+    if(!isset($_SESSION['isLoggedIn']) || $_SESSION['isLoggedIn']!=true)
+    {
+        header('Location:login.php');
+        exit;
+    }
+    ?>
 <!DOCTYPE html>
 <head>
     <title>Portal</title>
@@ -7,16 +18,11 @@
     
 </head>
 <body>
-    <div class="navbar"> 
-        <a href="index.html">Home</a>
-        <a href="index.html">About</a>
-        <a href="index.html">Share</a>
-    </div>
     <div class="container">
         <div class="main-div">
             <h1>Add a Ticket</h1>
             <!--  -->
-            <form name="ticket-form"  autocomplete="off"method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+            <form name="ticket-form" onsubmit="return myfunction()" autocomplete="off"method="post" action="ticket_add.php">
             <span id='error_title' ><?php if(isset($title_err)){ echo $title_err;} ?></span>            
             <label for="#title">Title</label>
                         <input type="text" id="title" placeholder="Title "name="ticket-title"  /><br/>
@@ -25,7 +31,7 @@
                         <textarea id="desc"placeholder="Description"name="ticket-desc"rows="1"cols="30"maxlength="255" form="ticket-form" ></textarea>
                         <label for="#myfile">Attachment</label>
                         <input type="file" id="myfile" name=" attachment">
-                        <button id="btn" onclick="myfunction()" >Submit</button>
+                        <button id="btn" name="form-submit">Submit</button>
             
            </form>
         </div>
@@ -72,23 +78,7 @@
           
           document.getElementById('text').innerHTML=out1;
         document.getElementById('details').innerHTML=out2;
-           
-        // // async function anotherone(){
-        // //     let data=await fetch('demo.txt');
-        // //     let text=await data.text();
-        // //     document.getElementById('asawait-demo').innerHTML=text;
-        // // }
-        //   const xhr=new XMLHttpRequest();
-        //  xhr.open('GET','demo.txt',true);
-       
-        // xhr.onload=function(){
-        //     let t2=this.responseText;
-        //     document.getElementById('json-details').innerHTML=t2;
-        // }
-        // xhr.send();
-        // anotherone();
-        // }
-
+        
         window.onclick=function(event){
             if(event.target==modal){
                 modal.style.display="none";
