@@ -7,7 +7,7 @@
                 $email=mysqli_real_escape_string($conn,$_POST['email']);
                 $pass=mysqli_real_escape_string($conn,$_POST['pass']);
                 
-                $q="Select * from users where email='$email' AND pass='$pass'";
+                $q="Select * from users where email='$email' AND password='$pass'";
                 $result=mysqli_query($conn,$q);
                 $row=mysqli_fetch_array($result);
 

@@ -40,9 +40,6 @@
                 <h1>Here's What we Got!</h1>
             <p id="text"></p>
             <p id ="details"></p>
-          
-            
-    
             <!-- <p id="json-details"></p> -->
             <!-- <p id="asawait-demo"></p> -->
             </div>
@@ -52,7 +49,7 @@
         var modal=document.getElementById("modal");
         var btn=document.getElementById("btn");
         var title=document.getElementById("title");
-        var desc=document.getElementById("desc");
+        var desc=document.getElementById("ticket-detail");
         
    
         function myfunction(){

@@ -3,7 +3,7 @@
     display: flex;
    flex-direction: row;
    justify-content: flex-start;
-   background-color:#211d7f;
+   background-color:black;
    height:50px;
    align-items: center;
    width: 100%;
@@ -16,6 +16,7 @@
    font-size:large;
 }
 .navbar a:hover{
-   background-color: #ffffff;
-   color:black;
+/*   background-color: #ffffff;*/
+   
+   border-bottom: 2px solid #D2AC47;
 }
