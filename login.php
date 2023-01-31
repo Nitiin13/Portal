@@ -7,28 +7,29 @@ include('authenticate.php');
     <title>
         Login Page!
     </title>
-    <link rel="stylesheet" href="login-page.css">
-    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="login-page.css?v1">
+    <link rel="stylesheet" href="nav.css?v1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
 </head>
 <body>
 <?php include 'navbar.php';?>
- <div class="container">
 
+ <div class="container">
+    
     <div class="login-box">
+        <h3>Login Here!</h3>
         <form method="Post"  action="authenticate.php" onsubmit="return myvalidation()">
-        <label for="#email">Email</label>
+       
         <input type="email" id="email" name="email" placeholder="Enter your Email Address" /><br>
-        <label for="#pass">Password</label>
+       
         <input type="password" id="pass" name="pass" placeholder="Enter your Password"/>
         <button id="lgn-button" name='submit-form' value='submit'>Login</button>
-        <hr>
+        
     </form>
         
-        <h4>Create a New Account?</h4>
-        <Button id="rg-button">Register</Button>
+        
         
     </div>
     

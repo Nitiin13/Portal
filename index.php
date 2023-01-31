@@ -10,8 +10,8 @@
 <!DOCTYPE html>
 <head>
     <title>Portal</title>
-    <link rel="stylesheet" href="page1.css">
-    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="page1.css?v1">
+    <link rel="stylesheet" href="nav.css?v1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 </head>
@@ -20,7 +20,7 @@
     <div class="container">
       
         <div class="main-div">
-            <h1>Add a Ticket</h1>
+            <h2>Add a Ticket</h2>
             <!--  -->
             <form id="ticketform" onsubmit="return myfunction()" autocomplete="off"method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                      

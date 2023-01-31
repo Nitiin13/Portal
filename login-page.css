@@ -7,7 +7,10 @@
 body{
     margin:0;
     top: 0;
-    background-color:#ffffff;
+    background-image:url('loginimg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
 }
 .container{
     display: grid;
@@ -22,58 +25,55 @@ body{
    
     grid-column-start: 3;
     grid-column-end: 5;
-    grid-row: 3/5;
+    grid-row: 5/9;
     display:flex;
     justify-content: flex-start;
     flex-direction: column;
-    width:65%;
-    height: 335px;
+    width:50%;
+    height: 250px;
     border:1px solid rgb(94, 94, 94);
-    border-radius:0px;
+    border-radius:10px;
     padding:10px 12px;
-    background-color: #ffffff;
-    box-shadow: 3px 2px rgb(34, 34, 34); 
-    /* background-color: hsla(201, 100%, 50%, 0.1); */
-   
+    background-color:#ffffff;
+    /* box-shadow: 3px 3px 5px 6px #8c8cf0; */
+    /* box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.25); */
+   box-shadow:    12px 12px 16px 0 rgba(255, 255, 255, 0.3) inset,
+   -8px -8px 12px 0 rgba(0, 0, 0, .25) inset;
+}
+.login-box h3{
+    align-self: center;
+    color:#211d7f;
 }
 .login-box input[type="email"]{
     display: block;
-    height: 20%;
+    height: 30%;
     width: 100%;
-    padding:1px 4px 1px 5px;
+    padding:6px 4px;
+    border-radius: 5px;
     
 }
 .login-box input[type="password"]
 {
     display: block;
-    height:20%;
-    width:100%;
-    padding:1px 4px 1px 5px;
+    height: 30%;
+    width: 100%;
+    padding:6px 4px;
+    border-radius: 5px;
     
 }
 .login-box #lgn-button{
     margin-top: 20px;
     padding:10px 12px;
     width: 30%;
-    border-radius: 0px none;
+    border-radius: 5px;
     background-color:#211d7f;
     color:white;
     margin-left: 35%;
    
     
 }
-.login-box #rg-button{
-    width:100%;
-    padding:10px 12px;
-    border-radius: 5px;
-    background-color:#5cdb5c;
-    color:White;
-    margin-top:0px;    
-}
-.login-box h4{
-   align-self: center;
-   
-}
+
+
 .login-box #lgn-button:hover{
         cursor: pointer;
         background-color:#8c8cf0;
