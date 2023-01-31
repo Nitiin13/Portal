@@ -3,8 +3,9 @@
  
    if(isset($_POST['submit-form']))
    {               
-                $email=$_POST['email'];
-                $pass=$_POST['pass'];
+
+                $email=mysqli_real_escape_string($conn,$_POST['email']);
+                $pass=mysqli_real_escape_string($conn,$_POST['pass']);
                 
                 $q="Select * from users where email='$email' AND pass='$pass'";
                 $result=mysqli_query($conn,$q);
