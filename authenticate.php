@@ -15,6 +15,7 @@
                 {  
                     session_start();
                     $_SESSION['isLoggedIn']=true;
+                    $_SESSION['role']=$row['role'];
                     $_SESSION['email']=$row['email'];
                     $_SESSION['id']=$row['userid'];
                     

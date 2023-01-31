@@ -2,6 +2,7 @@
 
 include('authenticate.php');
 
+
 $loggedin=false;
 // error_reporting(0);
 if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']==true)
@@ -9,9 +10,11 @@ if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']==true)
     
    $loggedin=true;
 }
+
 ?>
 <div class="navbar"> 
        <a href="#">TicketPortal</a>
+      
       <?php if($loggedin)
       {
         ?>
@@ -22,6 +25,6 @@ if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']==true)
         ?>
             <a href="login.php">Login</a>           
        <?php
-    }
-    ?>
+    }?>
+    
     </div>
