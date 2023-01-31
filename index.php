@@ -118,7 +118,7 @@ if(isset($_POST['form-submit']))
                     else{
                         $folder='';
                     }
-                        $q="insert into tickets(title,description,attachment,u_id)values('$title','$desc','$folder',$id)";
+                        $q="insert into tickets(title,description,attachment,u_id)values('$title','$desc','$folder','$id')";
                         if(mysqli_query($conn,$q)){
                             echo '<script type ="text/JavaScript">';  
                             echo 'alert("inserted")';  
